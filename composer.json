@@ -10,7 +10,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {"Swala\\Installer": "src/"}
+        "psr-4": {"Swala\\Installer\\": "src/"}
     },
     "extra": {
         "class": "Swala\\Installer\\Installer"
