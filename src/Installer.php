@@ -1,5 +1,5 @@
 <?php
-namespace Composer\Installers;
+namespace Swala\Installer;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
