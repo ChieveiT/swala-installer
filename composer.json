@@ -1,0 +1,21 @@
+{
+    "name": "swala/installer",
+    "description": "A custom composer installer for swala",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ChieveiT",
+            "email": "javachieveit@163.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Swala\\Installer": "src/"}
+    },
+    "extra": {
+        "class": "Swala\\Installer\\Installer"
+    },
+    "require": {
+        "composer-plugin-api": "1.0.0"
+    }
+}
