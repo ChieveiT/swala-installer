@@ -7,34 +7,28 @@ use Composer\Package\PackageInterface;
 class Installer extends LibraryInstaller
 {
     /**
-     * Install paths for supported types 
+     * Base paths for supported types 
      *
      * @var array
      */
-    private $installPaths = array(
-        'swala-server' => 'server/'
+    private $basePaths = array(
+        'swala-server' => 'server/',
+        'swala-library' => true
     );
 
     /**
      * {@inheritDoc}
      */
-    public function getInstallPath(PackageInterface $package)
+    protected function getPackageBasePath(PackageInterface $package)
     {
         $type = $package->getType();
         
-        return $this->installPaths[$type];
-    }
-    
-    public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
-    {
-        if (!$repo->hasPackage($package)) {
-            throw new \InvalidArgumentException('Package is not installed: '.$package);
+        if ($this->basePaths[$type] === true) {
+            //默认为library类型的路径
+            return parent::getPackageBasePath($package);
+        } else {
+            return $this->basePaths[$type];
         }
-
-        $repo->removePackage($package);
-
-        $installPath = $this->getInstallPath($package);
-        $this->io->write(sprintf('Deleting %s - %s', $installPath, $this->filesystem->removeDirectory($installPath) ? '<comment>deleted</comment>' : '<error>not deleted</error>'));
     }
 
     /**
@@ -42,6 +36,6 @@ class Installer extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return in_array($packageType, array_keys($this->installPaths));
+        return in_array($packageType, array_keys($this->basePaths));
     }
 }
