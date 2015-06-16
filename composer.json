@@ -1,7 +1,7 @@
 {
     "name": "swala/installer",
     "description": "A custom composer installer for swala",
-    "type": "composer-plugin",
+    "type": "composer-installer",
     "license": "MIT",
     "authors": [
         {
@@ -11,9 +11,6 @@
     ],
     "autoload": {
         "psr-4": {"Swala\\Installer\\": "src/"}
-    },
-    "require": {
-        "composer-plugin-api": "1.0.0"
     },
     "extra": {
         "branch-alias": {
