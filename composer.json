@@ -12,15 +12,13 @@
     "autoload": {
         "psr-4": {"Swala\\Installer\\": "src/"}
     },
-    "extra": {
-        "class": "Swala\\Installer\\Installer"
-    },
     "require": {
         "composer-plugin-api": "1.0.0"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
-        }
+        },
+        "class": "Swala\\Installer\\Installer"
     }
 }
