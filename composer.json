@@ -13,9 +13,6 @@
         "psr-4": {"Swala\\Installer\\": "src/"}
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
         "class": "Swala\\Installer\\Installer"
     }
 }
